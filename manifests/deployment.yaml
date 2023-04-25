@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo1
+  name: demo1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo1
+    spec:
+      containers:
+      - image: azdraftcr1.azurecr.io/demo1
+        name: demo1
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
